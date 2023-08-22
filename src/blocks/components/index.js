@@ -16,10 +16,12 @@
 залить на гит!!
 */
 
-const inputRange = document.querySelector(".rangeInput");
-const lowerInput = document.querySelector(".lowerInput");
-const apperInput = document.querySelector(".apperInput");
+const inputRange = document.querySelector("._rangeInput");
+const lowerInput = document.querySelector("._lowerInput");
+const apperInput = document.querySelector("._apperInput");
 
-inputRange.addEventListener(()=> {
-  let rangeValue = rangeInput.value;
+inputRange.addEventListener('input',()=> {
+  let rangeValue = parseInt(rangeInput.value);
+  inputRange.value = 100 - rangeValue;
+  lowerInput.value = rangeValue;
 })

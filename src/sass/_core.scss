@@ -53,7 +53,51 @@ input{
 
 
 
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+    box-sizing: border-box;
+}
 
+
+@mixin border($width, $style, $color, $radius){
+    border: {
+        width: $width;
+        style: $style;
+        color: $color;
+        radius: $radius;
+    }
+}
+
+
+@mixin flex($gap, $direction: row, $justify: space-between, $align: center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+
+@mixin font($color: white, $family: 'Roboto Regular', $style: normal, $size: 14px, $height: 16px, $weight: 400, $underline: none, $underline-offset: 3px){
+    color: $color;
+
+    font: {
+        family: $family;
+        style: $style;
+        size: $size;
+        weight: $weight;
+    }
+    line-height: $height;
+
+    text-decoration: $underline;
+    text-underline-offset: $underline-offset;
+}
+
+// ---- Variables ----
+
+
+$font-Manrope-Regular: 'Manrope Regular'; 
 
 
 

@@ -7,17 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inpute</title>
   </head>
-  <body>
-    <input class="rangeInput" type="range" id="rangeInput" min="0" max="100" step="1">
-    <div>
-      <label for="lower">Lower</label>
-      <input class="lowerInput" type="number" id="lower" value="0">
-    </div>
-    <div>
-      <label for="upper">Apper</label>
-      <input type="number" id="upper" value="100">
-    </div>
-    
+  <body class="_page">
+    <header class="_header">Menu</header>
+
+    <main class="_main">
+      <input
+        class="_rangeInput"
+        type="range"
+        id="rangeInput"
+        min="0"
+        max="100"
+        step="1"
+      />
+      <div class="_inputs-container">
+        <label class="_lowerInput-label" for="_lower">Lower</label>
+        <input class="_lowerInput" type="number" id="lower" value="0" />
+      </div>
+      <div>
+        <label class="_apperInput-label" for="upper">Apper</label>
+        <input class="_apperInput" type="number" id="upper" value="100" />
+      </div>
+    </main>
+
     <script src="./src/blocks/components/index.js"></script>
   </body>
 </html>
