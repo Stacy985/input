@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    background-color: #555;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    background-color: #ff9900;
+  }
+  
+  input[type="number"] {
+    width: 50px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+  }
+  
+  /* Размещение элементов в строку */
+  div {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Отступы для инпутов */
+  input[type="range"],
+  input[type="number"] {
+    margin-left: 10px;
+  }
