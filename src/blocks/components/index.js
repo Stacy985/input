@@ -15,3 +15,11 @@
 
 залить на гит!!
 */
+
+const inputRange = document.querySelector(".rangeInput");
+const lowerInput = document.querySelector(".lowerInput");
+const apperInput = document.querySelector(".apperInput");
+
+inputRange.addEventListener(()=> {
+  let rangeValue = rangeInput.value;
+})
