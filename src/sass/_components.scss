@@ -2,8 +2,25 @@
 
 ._page {
   @include flex(64px, column, center);
+  margin: 20px
 }
 
-._inputs-container{
-    @include flex(64px, column, center);
+
+._header{
+  @include font(black, 'Manrope Regular')
+}
+
+._main-title{
+  @include font(black, 'Manrope Regular')
+}
+
+
+._rangeValues{
+  @include font(black, 'Manrope Regular')
+}
+
+section._range-slider {
+  @include range-slider(300px, 300px, 50px, #F3F2F1, #7B61FF, left);
+  @include flex(64px, column, flex-start, flex-start);
+  margin-top: 20px;
 }

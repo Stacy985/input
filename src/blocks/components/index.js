@@ -16,12 +16,24 @@
 залить на гит!!
 */
 
-const inputRange = document.querySelector("._rangeInput");
-const lowerInput = document.querySelector("._lowerInput");
-const apperInput = document.querySelector("._apperInput");
 
-inputRange.addEventListener('input',()=> {
-  let rangeValue = parseInt(rangeInput.value);
-  inputRange.value = 100 - rangeValue;
-  lowerInput.value = rangeValue;
-})
+
+function getVals() {
+  const parent = this.parentNode;
+  const slides = parent.querySelectorAll("input[type='range']");
+  const slide1 = parseFloat(slides[0].value);
+  const slide2 = parseFloat(slides[1].value);
+  const displayElement = parent.querySelector("._rangeValues");
+  displayElement.textContent = `${slide1} ₽ -  ${slide2} ₽`;
+}
+
+window.addEventListener("load", function() {
+  const sliderSections = document.querySelectorAll("._range-slider");
+  sliderSections.forEach(function(sliderSection) {
+    const sliders = sliderSection.querySelectorAll("input[type='range']");
+    sliders.forEach(function(slider) {
+      slider.addEventListener("input", getVals);
+      slider.dispatchEvent(new Event("input"));
+    });
+  });
+});

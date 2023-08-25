@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./src/sass/app.css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inpute</title>
 
@@ -12,27 +13,17 @@
     <header class="_header">Menu</header>
 
     <main class="_main">
-      <label for="rangeInput">Ползунок</label>
-
-      <input
-        class="_rangeInput"
-        type="range"
-        id="rangeInput"
-        min="0"
-        max="100"
-        step="1"
-        vaiue="25"
-      />
-      <div class="_inputs-container">
-        <label class="_lowerInput-label" for="_lower">Lower</label>
-        <input class="_lowerInput" type="number" id="lower" value="0" />
-      </div>
-      <div>
-        <label class="_apperInput-label" for="upper">Apper</label>
-        <input class="_apperInput" type="number" id="upper" value="100" />
-      </div>
+      <h1 class="_main-title">Прайс</h1>
+      <section class="_range-slider">
+        <span class="_rangeValues"></span>
+        <input  value="500" min="500" max="50000" step="500" type="range">
+        <input  value="50000" min="500" max="50000" step="500" type="range">
+      </section>
+      
+      
     </main>
 
     <script src="./src/blocks/components/index.js"></script>
+
   </body>
 </html>
