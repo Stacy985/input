@@ -1,1 +1,10 @@
-@import './core';
+@import "./core";
+
+._page {
+  @include flex(64px, column, center);
+  margin: 20px;
+}
+._input-cintainer {
+  @include flex(60px, center, center);
+  margin-top: 14px;
+}

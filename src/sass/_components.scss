@@ -1,26 +1,25 @@
 @import "./_core";
 
-._page {
-  @include flex(64px, column, center);
-  margin: 20px
+._header {
+  @include font(black, "Manrope Regular");
 }
 
-
-._header{
-  @include font(black, 'Manrope Regular')
+._main-title {
+  @include font(black, "Manrope Regular");
 }
 
-._main-title{
-  @include font(black, 'Manrope Regular')
-}
-
-
-._rangeValues{
-  @include font(black, 'Manrope Regular')
+._range-values {
+  @include font(black, "Manrope Regular");
 }
 
 section._range-slider {
-  @include range-slider(300px, 300px, 50px, #F3F2F1, #7B61FF, left);
+  @include range-slider(200px, 300px, 50px, #f3f2f1, #7b61ff, left);
   @include flex(64px, column, flex-start, flex-start);
   margin-top: 20px;
+}
+
+._input {
+  @include font(black, "Manrope Regular", normal, 14px);
+  @include border(1px, solid, black, 4px);
+  padding: 4px;
 }

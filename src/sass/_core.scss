@@ -1,159 +1,229 @@
 // ---- Reset ----
 
-*, *:before, *:after{
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    text-size-adjust: none;
-    list-style-type: none;
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+  list-style-type: none;
 }
 
-footer, header, nav, section, main{
-    display: block;
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
 }
 
-body{
-    line-height: 1;
+body {
+  line-height: 1;
 }
 
-ol, ul{
-    list-style: none;
+ol,
+ul {
+  list-style: none;
 }
 
-blockquote, q{
-    quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after{
-    content: '';
-    content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 
-table{
-    border-collapse: collapse;
-    border-spacing: 0;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-input{
-  
-    border-radius: 0;
+input {
+  border-radius: 0;
 }
 //-webkit-appearance: none;
 
 // ---- Mixin ----
 
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+  box-sizing: border-box;
+}
 
-
-@mixin size($width, $height){
+@mixin border($width, $style, $color, $radius) {
+  border: {
     width: $width;
-    height: $height;
-    box-sizing: border-box;
-}
-
-
-@mixin border($width, $style, $color, $radius){
-    border: {
-        width: $width;
-        style: $style;
-        color: $color;
-        radius: $radius;
-    }
-}
-
-
-@mixin flex($gap, $direction: row, $justify: space-between, $align: center){
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-    gap: $gap;
-}
-
-
-@mixin font($color: white, $family: 'Manrope Regular', $style: normal, $size: 20px, $height: 14px, $weight: 400, $underline: none, $underline-offset: 3px){
+    style: $style;
     color: $color;
-
-    font: {
-        family: $family;
-        style: $style;
-        size: $size;
-        weight: $weight;
-    }
-    line-height: $height;
-    text-decoration: $underline;
-    text-underline-offset: $underline-offset;
+    radius: $radius;
+  }
 }
 
-  
- 
- @mixin range-slider($width, $height, $input-top, $input-bg-color, $input-thumb-color, $float:none, $input-height:10px, $input-border-radius:14px) {
-    position: relative;
+@mixin flex($gap, $direction: row, $justify: space-between, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin font(
+  $color: white,
+  $family: "Manrope Regular",
+  $style: normal,
+  $size: 20px,
+  $height: 14px,
+  $weight: 400,
+  $underline: none,
+  $underline-offset: 3px
+) {
+  color: $color;
+
+  font: {
+    family: $family;
+    style: $style;
+    size: $size;
+    weight: $weight;
+  }
+  line-height: $height;
+  text-decoration: $underline;
+  text-underline-offset: $underline-offset;
+}
+
+@mixin range-slider(
+  $width,
+  $height,
+  $input-top,
+  $input-bg-color,
+  $input-thumb-color,
+  $float: none,
+  $input-height: 10px,
+  $input-border-radius: 14px
+) {
+  position: relative;
+  width: $width;
+  height: $height;
+  float: $float;
+  text-align: center;
+
+  input[type="range"] {
+    pointer-events: none;
+    position: absolute;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: #7b61ff;
+    border: none;
+    border-radius: $input-border-radius;
+    background: $input-bg-color;
+    box-shadow: inset 0 1px 0 0 darken($input-bg-color, 15%),
+      inset 0 -1px 0 0 darken($input-bg-color, 10%);
+    -webkit-box-shadow: inset 0 1px 0 0 darken($input-bg-color, 15%),
+      inset 0 -1px 0 0 darken($input-bg-color, 10%);
+    left: 0;
+    top: $input-top;
     width: $width;
-    height: $height;
-    float: $float;
-    text-align: center;
+    outline: none;
+    height: $input-height;
+    margin: 0;
+    padding: 0;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+    -webkit-appearance: none;
+    width: $input-height * 2;
+    height: $input-height * 2;
+    border: none;
+    border-radius: 50%;
+    background-color: #7b61ff;
+    border: 1px solid white;
+  }
+}
 
-    input[type="range"] {
-        pointer-events: none;
-        position: absolute;
-        -webkit-appearance: none;
-        -webkit-tap-highlight-color: #7B61FF;    
-        border: none;
-        border-radius: $input-border-radius;
-        background: $input-bg-color;
-        box-shadow: inset 0 1px 0 0 darken($input-bg-color,15%), inset 0 -1px 0 0 darken($input-bg-color,10%);
-        -webkit-box-shadow: inset 0 1px 0 0 darken($input-bg-color,15%), inset 0 -1px 0 0 darken($input-bg-color,10%);
-        left: 0;
-        top: $input-top;
-        width: $width;
-        outline: none;
-        height: $input-height;
-        margin: 0;
-        padding: 0;
-      } 
-      input[type="range"]::-webkit-slider-thumb {
-        pointer-events: all;
-        position: relative;
-        z-index: 1;
-        outline: 0;    
-        -webkit-appearance: none;
-        width: $input-height * 2;
-        height: $input-height * 2;
-        border: none;
-        border-radius: 50%;
-        background-color: #7B61FF;
-        border: 1px solid white;
-
-      }
-      
-
- }
-  
+@mixin border($width, $style, $color, $radius) {
+  border: {
+    width: $width;
+    style: $style;
+    color: $color;
+    radius: $radius;
+  }
+}
 
 // ---- Variables ----
 
-
-$font-Manrope-Regular: 'Manrope Regular'; 
-
-
-
-
+$font-Manrope-Regular: "Manrope Regular";
 
 // ---- Fonts ----
 
-
 @font-face {
-    font-family: 'Manrope Regular';
-    src: url("../fonts/Manrope-VariableFont_wght.ttf")
-
+  font-family: "Manrope Regular";
+  src: url("../fonts/Manrope-VariableFont_wght.ttf");
 }
-
