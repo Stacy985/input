@@ -1,8 +1,7 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -66,7 +65,6 @@ video {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
-      -ms-text-size-adjust: none;
           text-size-adjust: none;
   list-style-type: none;
 }
@@ -114,7 +112,6 @@ input {
   font-family: "Manrope Regular";
   src: url("../fonts/Manrope-VariableFont_wght.ttf");
 }
-
 ._header {
   color: black;
   font-family: "Manrope Regular";
@@ -154,28 +151,18 @@ section._range-slider {
   height: 300px;
   float: left;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 64px;
   margin-top: 20px;
 }
-
-section._range-slider input[type="range"] {
+section._range-slider input[type=range]._range-input {
   pointer-events: none;
   position: absolute;
   -webkit-appearance: none;
-  -webkit-tap-highlight-color: #7b61ff;
+  -webkit-tap-highlight-color: #2bff00;
   border: none;
   border-radius: 14px;
   background: #f3f2f1;
@@ -189,8 +176,7 @@ section._range-slider input[type="range"] {
   margin: 0;
   padding: 0;
 }
-
-section._range-slider input[type="range"]::-webkit-slider-thumb {
+section._range-slider input[type=range]._range-input::-webkit-slider-thumb {
   pointer-events: all;
   position: relative;
   z-index: 1;
@@ -200,8 +186,14 @@ section._range-slider input[type="range"]::-webkit-slider-thumb {
   height: 20px;
   border: none;
   border-radius: 50%;
-  background-color: #7b61ff;
+  background-color: #2bff00;
   border: 1px solid white;
+}
+section._range-slider input[type=range]._range-input:first-of-type::-webkit-slider-thumb {
+  background-color: #2bff00;
+}
+section._range-slider input[type=range]._range-input:last-of-type::-webkit-slider-thumb {
+  background-color: #ff0000;
 }
 
 ._input {
@@ -223,8 +215,7 @@ section._range-slider input[type="range"]::-webkit-slider-thumb {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -288,7 +279,6 @@ video {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
-      -ms-text-size-adjust: none;
           text-size-adjust: none;
   list-style-type: none;
 }
@@ -336,39 +326,20 @@ input {
   font-family: "Manrope Regular";
   src: url("../fonts/Manrope-VariableFont_wght.ttf");
 }
-
 ._page {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 64px;
   margin: 20px;
 }
 
 ._input-cintainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: center;
-          flex-direction: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
   gap: 60px;
   margin-top: 14px;
 }
@@ -376,8 +347,7 @@ input {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -441,7 +411,6 @@ video {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
-      -ms-text-size-adjust: none;
           text-size-adjust: none;
   list-style-type: none;
 }
@@ -488,4 +457,4 @@ input {
 @font-face {
   font-family: "Manrope Regular";
   src: url("../fonts/Manrope-VariableFont_wght.ttf");
-}
+}/*# sourceMappingURL=app.css.map */

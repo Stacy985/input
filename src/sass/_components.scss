@@ -13,7 +13,7 @@
 }
 
 section._range-slider {
-  @include range-slider(200px, 300px, 50px, #f3f2f1, #7b61ff, left);
+  @include range-slider(200px, 300px, 50px, #f3f2f1, #2bff00, #ff0000, left);
   @include flex(64px, column, flex-start, flex-start);
   margin-top: 20px;
 }
