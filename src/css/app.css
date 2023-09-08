@@ -169,7 +169,6 @@ section._range-slider input[type=range]._range-input {
   box-shadow: inset 0 1px 0 0 #d0ccc8, inset 0 -1px 0 0 #dbd9d6;
   -webkit-box-shadow: inset 0 1px 0 0 #d0ccc8, inset 0 -1px 0 0 #dbd9d6;
   left: 0;
-  top: 50px;
   width: 200px;
   outline: none;
   height: 10px;
@@ -187,13 +186,14 @@ section._range-slider input[type=range]._range-input::-webkit-slider-thumb {
   border: none;
   border-radius: 50%;
   background-color: #2bff00;
-  border: 1px solid white;
+  border: 3px solid white;
+  box-sizing: content-box;
 }
 section._range-slider input[type=range]._range-input:first-of-type::-webkit-slider-thumb {
   background-color: #2bff00;
 }
 section._range-slider input[type=range]._range-input:last-of-type::-webkit-slider-thumb {
-  background-color: #ff0000;
+  background-color: #7B61FF;
 }
 
 ._input {
@@ -210,6 +210,22 @@ section._range-slider input[type=range]._range-input:last-of-type::-webkit-slide
   border-color: black;
   border-radius: 4px;
   padding: 4px;
+}
+
+.range_container {
+  position: relative;
+  width: 200px;
+  height: 10px;
+  position: relative;
+}
+.range_container > .slider-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #7B61FF;
+  border-radius: 10px;
 }
 
 *,

@@ -16,33 +16,37 @@
 
       <section class="_range-slider">
         <span class="_range-values"></span>
-        <input
-          class="_range-input"
-          value="100"
-          min="100"
-          max="50000"
-          step="100"
-          type="range"
-        />
-        <input
-          class="_range-input"
-          value="50000"
-          min="100"
-          max="50000"
-          step="100"
-          type="range"
-        />
+        <div class="range_container _range-slider-container">
+          <input
+            class="_range-input"
+            value="100"
+            min="100"
+            max="50000"
+            step="100"
+            type="range"
+          />
+          <input
+            class="_range-input"
+            value="50000"
+            min="100"
+            max="50000"
+            step="100"
+            type="range"
+          />
+
+          <span id="slider_indent" class="slider-line _range-slider-track"></span>
+        </div>
         <div class="_input-cintainer">
           <input
             class="_input _input-lower"
             value="100"
-            type="number"
+            type="text"
             step="100"
           />
           <input
             class="_input _input-upper"
             value="50000"
-            type="number"
+            type="text"
             step="100"
           />
         </div>
