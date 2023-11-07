@@ -1,5 +1,28 @@
 {
   "dependencies": {
+    "chai": "^4.3.10",
+    "math": "^0.0.3",
     "nouislider": "^15.7.1"
-  }
+  },
+  "name": "input",
+  "description": "“# titile”",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  },
+  "scripts": {
+    "test": "mocha ./src/test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stacy985/input.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stacy985/input/issues"
+  },
+  "homepage": "https://github.com/Stacy985/input#readme"
 }
