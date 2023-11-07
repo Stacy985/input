@@ -174,7 +174,7 @@ const expect = require('chai').expect;
 
 
 
-describe('#Test: Validate full name',() => {
+describe('#Test: Validate full name', () => {
   context('Dropping the wrong number of elements', () => {
     // Иванов Иван
     it('Should return false', () => {
@@ -204,8 +204,8 @@ describe('#Test: Validate full name',() => {
         .to.equal(false)
     })
   })
-  
-  context('The lenght of a part should be 3 or higher',() => {
+
+  context('The lenght of a part should be 3 or higher', () => {
     it('Should return false', () => {
       expect(nameModule.checkName('Иван Ян Иванович'))
         .to.equal(false);
@@ -229,41 +229,126 @@ describe('#Test: Validate full name',() => {
 
 //функция add переписать
 
+// 1. Оба передаются и оба числа
+// 2. Оба передаются и какое-либо из них не число
+// 3. Передается только одно числовое значение
+// 4. Передается только одно не числовое значение
+// 5. Значения не передаются вообще
+
 describe('Math Functions', () => {
-  context('add()', () => {
-    it('Should return the sum two numbers', () => {
-      expect(math.add(5, 3)).to.equal(8);
-    });
-  });
+  describe('add()', () => {
+    context('1. Both are transmitted and both are numbers', () => {
+      it('Should return 10', () => {
+        expect(math.add(4, 6))
+          .to.equal(10)
+      })
 
-  context('sub()', () => {
-    it('Should return difference two numbers', () => {
-      expect(math.sub(5, 3)).to.equal(2);
-    });
-  });
+      it('Should return 32', () => {
+        expect(math.add(20, 12))
+          .to.equal(32)
+      })
 
-  context('mult()', () => {
-    it('Should return product two numbers', () => {
-      expect(math.mult(5, 3)).to.equal(15);
-    });
-  });
+      it('Should return 57', () => {
+        expect(math.add(24, 33))
+          .to.equal(57)
+      })
 
-  context('div()', () => {
-    it('Should return result dividing two numbers', () => {
-      expect(math.div(6, 2)).to.equal(3);
-    });
-  });
+      it('Should return 23', () => {
+        expect(math.add(11, 12))
+          .to.equal(23)
+      })
+    })
 
-  context('expon()', () => {
-    it('Should return the result of raising number to a power', () => {
-      expect(math.expon(2, 3)).to.equal(8);
-    });
-  });
+    context('2. Both are transmitted and either of them is not a number', () => {
+      it('Should throw an error', () => {
+        try {
+          expect(math.add(11, 'hello'))
+            .to.throw(TypeError)
+        } catch (error) {
+          console.log(error.message)
+        }
+      })
 
-  context('squart()', () => {
-    it('Should return the square root of a non-negative number', () => {
-      expect(math.squart(16)).to.be.closeTo(4, 0.001); 
-    });
-  });
-});
+      it('Should throw an error', () => {
+        try {
+          expect(math.add('hello', 12))
+            .to.throw(TypeError)
+        } catch (error) {
+          console.log(error.message)
+        }
+      })
 
+      it('Should throw an error', () => {
+        try {
+          expect(math.add(false, 'hello'))
+            .to.throw(TypeError)
+        } catch (error) {
+          console.log(error.message)
+        }
+      })
+    })
+
+    context('3. Only one numeric value is passed', () => {
+      it('Should return 15', () => {
+        expect(math.add(15))
+          .to.equal(15)
+      })
+
+      it('Should return 24', () => {
+        expect(math.add(24))
+          .to.equal(24)
+      })
+    })
+
+    context('4. Only one non-numeric value is passed', () => {
+      it('Should throw an error', () => {
+        try {
+          expect(math.add(false))
+            .to.throw(TypeError)
+        } catch (error) {
+          console.log(error.message)
+        }
+      })
+    })
+
+    context('5. Values are not passed at all', () => {
+      it('Should return 0', () => {
+        expect(math.add())
+          .to.equal(0)
+      })
+    })
+  })
+
+  describe('squart()', () => {
+    context('The number is transmitted',() => {
+      it('Should return 5', () => {
+        expect(math.squart(25))
+        .to.equal(5)
+      });
+      it('Should return 7', () => {
+        expect(math.squart(49))
+        .to.equal(7)
+      });
+    })
+    context('Data is not transferred',() => {
+      it('Should return 0', () => {
+        expect(math.squart())
+          .to.equal(0)
+      })
+    })
+      
+    })
+    context('Not a number',() => { //type
+      it('Should return Error', () => {
+        try{
+          expect(math.squart(false))
+          .to.throw(TypeError)
+
+        }
+        catch(error){
+          console.log(error.message)
+        }
+      })
+      
+    })
+  })
